@@ -6,12 +6,6 @@ import random
 import multiprocessing as mp
 from dataclasses import dataclass
 
-# =============================================================
-# Screensaver estilo "Mystify" (Win95-like) con paralelismo
-# - Render con Pygame en el proceso principal
-# - Simulación de múltiples figuras en procesos separados
-# - Salida con cualquier movimiento de mouse o teclado
-# =============================================================
 
 try:
     import pygame
@@ -20,7 +14,7 @@ except ImportError:
     sys.exit(1)
 
 # ------------------ Configuración ------------------
-NUM_SHAPES = 6          # cantidad de figuras "mystify"
+NUM_SHAPES = 25          # cantidad de figuras "mystify"
 POINTS_PER_SHAPE = 6    # puntos por figura (polilínea cerrada)
 SIM_FPS = 45            # FPS de simulación en procesos
 RENDER_FPS = 60         # FPS de render en el proceso principal
@@ -172,7 +166,7 @@ def run_screensaver():
 
     # título flotante sutil
     font = pygame.font.SysFont("Verdana", 18, bold=False)
-    title_text = font.render("Mystify-ish (Python)", True, (120, 120, 160))
+    title_text = font.render("Screen saver", True, (120, 120, 160))
 
     # track del mouse para salir si se mueve
     mouse_origin = pygame.mouse.get_pos()
